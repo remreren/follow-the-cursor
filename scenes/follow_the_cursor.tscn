@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkih88h3p2jij"]
+
+[ext_resource type="Texture2D" uid="uid://dm4iwh142g2he" path="res://rocket.png" id="1_dc54o"]
+[ext_resource type="Script" path="res://scripts/follow_cursor.gd" id="1_xcggi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkl1x"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(161, 86)
+
+[node name="parent_node" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="parent_node"]
+script = ExtResource("1_xcggi")
+
+[node name="Sprite2D" type="Sprite2D" parent="parent_node/CharacterBody2D"]
+rotation = 1.5708
+texture = ExtResource("1_dc54o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parent_node/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_gkl1x")
